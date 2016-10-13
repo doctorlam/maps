@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @journey.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @journey.description %>
+</p>
+<p>
+  <strong>Location:</strong>
+  <%= @journey.address %><br>
+  <%= @journey.latitude %><br>
+  <%= @journey.longitude %>
+
+</p>
+<p>
+  <strong>Rating:</strong>
+  <%= @journey.rating %>
+</p>
+<p>
+  <strong>Clues:</strong>
+  <ol>
+  <% for clue in @journey.clues %>
+      <li><%= clue.step %></li>
+  <% end %>
+  </ol>
+
+
+<h3>Other Nearby Journeys</h3>
+<ul>
+<% for journey in @journey.nearbys(10) %>
+  <li><%= link_to journey.name, journey %> (<%= journey.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_journey_path(@journey) %> |
+<%= link_to 'Back', journeys_path %>
