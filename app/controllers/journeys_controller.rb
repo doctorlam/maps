@@ -14,6 +14,7 @@ class JourneysController < ApplicationController
 @hash = Gmaps4rails.build_markers(@journeys) do |journey, marker|
   marker.lat journey.latitude
   marker.lng journey.longitude
+  marker.infowindow journey.name
 end
    
   end
@@ -21,6 +22,7 @@ end
   # GET /journeys/1
   # GET /journeys/1.json
   def show
+
   end
 
   # GET /journeys/new
