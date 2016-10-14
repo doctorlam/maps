@@ -27,11 +27,15 @@
 
 <ol>
   <% for clue in @journey.clues %>
-      <li><%= clue.step %></li>
-  </ol>
-    <%= image_tag @journey.main_url(:thumb) if @journey.main? %>
+      <li><%= clue.step %>
+      <%= image_tag clue.clueimage_url(:thumb) if clue.clueimage? %>
+       </li>
 
-  <% end %>
+      <% end %>
+
+  </ol>
+
+
 
 
 <h3>Other Nearby Journeys</h3>

@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014132926) do
+ActiveRecord::Schema.define(version: 20161014141447) do
 
   create_table "clues", force: :cascade do |t|
     t.text     "step"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "journey_id"
+    t.string   "clueimage"
   end
 
   create_table "journeys", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161014132926) do
     t.string   "address"
     t.integer  "clues_id"
     t.string   "main"
+    t.string   "clueimage"
   end
 
 end
