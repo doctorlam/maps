@@ -10,6 +10,11 @@ class JourneysController < ApplicationController
   else
     @journeys = Journey.all
   end
+  @journeys = Journey.all
+@hash = Gmaps4rails.build_markers(@journeys) do |journey, marker|
+  marker.lat journey.latitude
+  marker.lng journey.longitude
+end
    
   end
 
