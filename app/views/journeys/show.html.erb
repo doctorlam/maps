@@ -22,9 +22,11 @@
 </p>
 <p>
   <strong>Clues:</strong>
-  <ol>
+  <button type="button">Show Clue</button>
+
+<ol>
   <% for clue in @journey.clues %>
-      <li><%= clue.step %></li>
+      <li id ="ollist"><%= clue.step %></li>
   <% end %>
   </ol>
 
@@ -38,3 +40,9 @@
 
 <%= link_to 'Edit', edit_journey_path(@journey) %> |
 <%= link_to 'Back', journeys_path %>
+<script>
+$('ol > li').hide();
+$('button').click(function() {
+    $('ol > li:hidden:first').show();
+});
+</script>
