@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013214743) do
+ActiveRecord::Schema.define(version: 20161014132926) do
 
   create_table "clues", force: :cascade do |t|
     t.text     "step"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20161013214743) do
     t.float    "longitude"
     t.string   "address"
     t.integer  "clues_id"
+    t.string   "main"
   end
 
 end

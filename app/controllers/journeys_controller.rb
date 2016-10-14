@@ -82,6 +82,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def journey_params
-      params.require(:journey).permit(:name, :description, :rating, :address, :lattitude, :longitude, clues_attributes: [:step, :id, :_destroy])
+      params.require(:journey).permit(:main, :remote_main_url, :name, :description, :rating, :address, :lattitude, :longitude, clues_attributes: [:step, :id, :_destroy])
     end
 end

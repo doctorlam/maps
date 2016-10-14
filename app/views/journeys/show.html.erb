@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%= image_tag @journey.main_url(:thumb) if @journey.main? %>
 
 <p>
   <strong>Name:</strong>
@@ -27,8 +28,10 @@
 <ol>
   <% for clue in @journey.clues %>
       <li><%= clue.step %></li>
-  <% end %>
   </ol>
+    <%= image_tag @journey.main_url(:thumb) if @journey.main? %>
+
+  <% end %>
 
 
 <h3>Other Nearby Journeys</h3>

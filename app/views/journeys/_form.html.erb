@@ -10,7 +10,11 @@
       </ul>
     </div>
   <% end %>
-
+    <%= f.file_field :main %>
+ <p>
+    <%= f.label :remote_main_url, "or image URL" %><br />
+    <%= f.text_field :remote_main_url %>
+  </p>
   <div class="field">
     <%= f.label :name %>
     <%= f.text_area :name %>

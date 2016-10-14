@@ -11,6 +11,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'gmaps4rails'
 gem 'geocoder'
+gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+gem "rmagick"
+
+
 group :production do 
 	gem 'pg'
 	gem 'rails_12factor'
@@ -19,6 +23,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'sqlite3'
+  gem 'listen'
 
 end
 
