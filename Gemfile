@@ -13,7 +13,9 @@ gem 'gmaps4rails'
 gem 'geocoder'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem "rmagick"
-
+gem 'carrierwave-aws'
+gem "figaro"
+gem "fog"
 
 group :production do 
 	gem 'pg'
