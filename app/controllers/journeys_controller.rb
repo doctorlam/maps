@@ -40,7 +40,7 @@ end
   # POST /journeys.json
   def create
     @journey = Journey.new(journey_params)
-
+    @journey.user_id = current_user.id
     respond_to do |format|
       if @journey.save
         format.html { redirect_to @journey, notice: 'Journey was successfully created.' }
@@ -84,6 +84,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def journey_params
-      params.require(:journey).permit(:main, :remote_main_url, :clueimage, :remote_clueimage_url, :name, :description, :rating, :address, :lattitude, :longitude, clues_attributes: [:clueimage,:remote_clueimage_url, :step, :id, :_destroy])
+      params.require(:journey).permit(:user_id, :solution, :main, :remote_main_url, :clueimage, :remote_clueimage_url, :name, :description, :rating, :address, :lattitude, :longitude, clues_attributes: [:clueimage,:remote_clueimage_url, :step, :id, :_destroy])
     end
 end

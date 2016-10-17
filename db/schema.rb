@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017174348) do
+ActiveRecord::Schema.define(version: 20161017184516) do
 
   create_table "clues", force: :cascade do |t|
     t.text     "step"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20161017174348) do
     t.integer  "clues_id"
     t.string   "main"
     t.string   "clueimage"
+    t.integer  "user_id"
+    t.text     "solution"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +50,9 @@ ActiveRecord::Schema.define(version: 20161017174348) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "admin"
+    t.integer  "journey_id"
+    t.text     "name"
+    t.string   "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

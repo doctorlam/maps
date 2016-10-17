@@ -5,5 +5,5 @@ class Journey < ApplicationRecord
 	accepts_nested_attributes_for :clues, :reject_if => lambda { |a| a[:step].blank? }, :allow_destroy => true
   	mount_uploader :main, MainUploader
   	mount_uploader :clueimage, ClueimageUploader
-
+  	belongs_to :user
 end

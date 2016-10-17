@@ -1,0 +1,4 @@
+<h1><%= current_user.username %>'s Created Journeys</h1>
+<% @journeys.each do |journey| %>
+	<%= journey.name %>
+<% end %>
