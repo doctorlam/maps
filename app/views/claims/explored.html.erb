@@ -6,6 +6,7 @@
   <tr>
     <th class="center">Journey Name</th>
     <th class="center">Your Answer</th>
+    <th class="center">Points Earned</th>
     <th class="center">Completed?</th>
   </tr>
 
@@ -13,6 +14,11 @@
     <tr>
       <td class="center"><%= claim.journey.name %></td>
       <td class="center"><%= claim.submission %></td>
+      <% if claim.clue_number? %>
+      <td class="center"><%= claim.clue_number.to_f * -5 +105 %></td>
+        <% else %>
+      <td class="center">no</td>
+      <% end %>
       <td class="center"><%= claim.created_at.strftime("%B %-d, %Y") %></td>
     </tr>
   <% end %>

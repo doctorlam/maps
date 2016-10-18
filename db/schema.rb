@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017200905) do
+ActiveRecord::Schema.define(version: 20161018174915) do
 
   create_table "claims", force: :cascade do |t|
     t.integer  "journey_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161017200905) do
     t.datetime "updated_at",  null: false
     t.integer  "explorer_id"
     t.integer  "creator_id"
+    t.integer  "clue_number"
   end
 
   create_table "clues", force: :cascade do |t|

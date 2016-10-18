@@ -11,6 +11,7 @@ class ClaimsController < ApplicationController
 
   def explored
     @claims = Claim.all.where(explorer: current_user).order("created_at DESC")
+    
   end
 
 
@@ -87,7 +88,7 @@ class ClaimsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def claim_params
-      params.require(:claim).permit(:submission)
+      params.require(:claim).permit(:submission, :clue_number)
     end
 
 end

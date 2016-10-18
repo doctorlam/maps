@@ -29,6 +29,10 @@
     <%= f.label :submission, "Final Answer" %><br>
     <%= f.text_area :submission %>
   </div>
+   <div class="field">
+    <%= f.label :clue_number, "Enter the number of clues you used:" %><br>
+    <%= f.number_field :clue_number %>
+  </div>
 
   <div class="actions">
     <%= f.submit 'Submit Answer' %>
