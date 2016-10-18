@@ -11,14 +11,32 @@
     </div>
   <% end %>
 
-  
+  <p>
+  <strong>Clues:</strong>
+  <button type="button">Show Clue</button>
+
+<ol>
+  <% for clue in @journey.clues %>
+      <li><%= clue.step %>
+      <%= image_tag clue.clueimage_url(:thumb) if clue.clueimage? %>
+       </li>
+
+      <% end %>
+
+  </ol>
 
   <div class="field">
-    <%= f.label :submission %>
+    <%= f.label :submission, "Final Answer" %><br>
     <%= f.text_area :submission %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit Answer' %>
   </div>
 <% end %>
+<script>
+$('ol > li').hide();
+$('button').click(function() {
+    $('ol > li:hidden:first').show();
+});
+</script>

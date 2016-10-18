@@ -21,19 +21,7 @@
   <strong>Rating:</strong>
   <%= @journey.rating %>
 </p>
-<p>
-  <strong>Clues:</strong>
-  <button type="button">Show Clue</button>
 
-<ol>
-  <% for clue in @journey.clues %>
-      <li><%= clue.step %>
-      <%= image_tag clue.clueimage_url(:thumb) if clue.clueimage? %>
-       </li>
-
-      <% end %>
-
-  </ol>
 <div class="center">
       <%= link_to "Let's Go!", new_journey_claim_path(@journey), class: "btn btn-primary" %>
     </div>
@@ -48,9 +36,4 @@
 
 <%= link_to 'Edit', edit_journey_path(@journey) %> |
 <%= link_to 'Back', journeys_path %>
-<script>
-$('ol > li').hide();
-$('button').click(function() {
-    $('ol > li:hidden:first').show();
-});
-</script>
+

@@ -46,7 +46,7 @@ class ClaimsController < ApplicationController
 
     respond_to do |format|
       if @claim.save
-        format.html { redirect_to @claim, notice: 'Claim was successfully created.' }
+        format.html { redirect_to explored_url, notice: 'Claim was successfully created.' }
         format.json { render :show, status: :created, location: @claim }
       else
         format.html { render :new }
