@@ -6,7 +6,7 @@ class ClaimsController < ApplicationController
   # GET /claims
   # GET /claims.json
    def claimed
-    @journeys = Journey.all.where(creator: current_user).order("created_at DESC")
+    @claims = Claim.all.where(creator: current_user).order("created_at DESC")
   end
 
   def explored

@@ -1,0 +1,25 @@
+<div class="center">
+  <h2>Your Journey History</h2>
+</div>
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <th class="center">Journey Name</th>
+    <th class="center">Your Answer</th>
+    <th class="center">Completed?</th>
+  </tr>
+
+  <% @claims.each do |claim| %>
+    <tr>
+      <td class="center"><%= claim.journey.name %></td>
+      <td class="center"><%= claim.submission %></td>
+      <td class="center"><%= claim.created_at.strftime("%B %-d, %Y") %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Journey', new_journey_path, class: "btn btn-link" %>
+<% end %>

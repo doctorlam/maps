@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :claims
   devise_for :users
   resources :journeys do
   resources :claims, only: [:new, :create]
